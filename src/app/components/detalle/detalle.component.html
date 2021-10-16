@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-label class ="titulo">
+    <h1>
+    {( pelicula.title)}
+    </h1>
+  </ion-label>
+
+  <img [src]= "pelicula.backdrop_path | imagen" *ngIf= "pelicula.backdrop_path">
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" class= "poster-detalle-sobre">
+        <img [src]="pelicula.poster_path | imagen" class = "poster" *ngIf= "pelicula.poster_path">
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-icon slot="start" color="primary" name="thumbs-up">Awesome Label</ion-icon>
+          <ion-label>Rating</ion-label>
+          <ion-note slot="end" color="primary">{( vote.average)}</ion-note>
+        </ion-item>
+        
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+
+</ion-content>>

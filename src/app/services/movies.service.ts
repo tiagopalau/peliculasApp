@@ -47,3 +47,4 @@ export class MoviesService {
     return this.ejecutarQuery<RespuestaMDB>(`/discover/movie?primary_release_date.gte=${inicio}&primary_release_date.lte=${fin}`);
   }
 }
+
