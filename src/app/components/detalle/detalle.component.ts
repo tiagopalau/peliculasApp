@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-detalle',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleComponent implements OnInit {
 
-  constructor() { }
+  @Input() id;
+
+  constructor( private MoviesService: MoviesService) { }
+
+  ngOnInit () {
+    this.MoviesService.getPeliculaDetalle(this.id).subscribe( resp =>{
+      console.log(resp);
+      this.pelicula = resp;
+    });
+
+    this.MoviesService.getActoresPelicula(this.id).subscribe( resp =>{
+      console.log(resp);
+    });
+
+  }
 
   ngOnInit() {}
 
