@@ -1,11 +1,10 @@
 <ion-content>
-  <ion-label class ="titulo">
-    <h1>
-    {( pelicula.title)}
-    </h1>
+  <ion-label class="titulo">
+    <h1>{{ pelicula.title }}</h1>
   </ion-label>
 
-  <img [src]= "pelicula.backdrop_path | imagen" *ngIf= "pelicula.backdrop_path">
+
+ <img [src]= "pelicula.backdrop_path | imagen" *ngIf= "pelicula.backdrop_path">
 
   <ion-grid fixed>
     <ion-row>
@@ -14,14 +13,14 @@
       </ion-col>
       <ion-col size="12">
         <ion-item>
-          <ion-icon slot="start" color="primary" name="thumbs-up">Awesome Label</ion-icon>
+          <ion-icon slot="start" color="primary" name="thumbs-up"></ion-icon>
           <ion-label>Rating</ion-label>
-          <ion-note slot="end" color="primary">{( vote.average)}</ion-note>
+          <ion-note slot="end" color="primary">{{ pelicula.vote_average }}</ion-note>
         </ion-item>
         
       </ion-col>
       
     </ion-row>
-  </ion-grid>
+  </ion-grid> 
 
-</ion-content>>
+</ion-content>
